@@ -1,4 +1,4 @@
-# forensics-tools
+# aws-forensics-tools
 Tools for AWS forensics 
 
 
