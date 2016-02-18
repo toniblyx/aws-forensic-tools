@@ -18,3 +18,6 @@ iptables -A OUTPUT -p tcp -d $OFFICE_IP --sport 22 --dport 513:65535 -m state --
 # make sure nothing comes or goes out of this box
 iptables -A INPUT -j DROP
 iptables -A OUTPUT -j DROP
+
+# for FirewallD
+# firewall-cmd --add-rich-rule="rule family="ipv4" source address="$OFFICE_IP" service name="ssh" accept"
