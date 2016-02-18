@@ -19,5 +19,9 @@ iptables -A OUTPUT -p tcp -d $OFFICE_IP --sport 22 --dport 513:65535 -m state --
 iptables -A INPUT -j DROP
 iptables -A OUTPUT -j DROP
 
-# for FirewallD
+# for FirewallD to test
 # firewall-cmd --add-rich-rule="rule family="ipv4" source address="$OFFICE_IP" service name="ssh" accept"
+# firewall-cmd --zone=internal --add-service=ssh
+# firewall-cmd --zone=internal --add-source=192.168.56.105/32
+# firewall-cmd --zone=internal --add-source=192.168.56.120/32
+# firewall-cmd --zone=public --remove-service=ssh
