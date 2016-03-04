@@ -11,3 +11,6 @@ do
 echo "####### Instances launched since $DATE_SINCE in $i #######"
 aws ec2 describe-instances --region $i --query "Reservations[].Instances[?LaunchTime>=\`$DATE_SINCE\`][].{id: InstanceId, type: InstanceType, launched: LaunchTime}";
 done
+
+# get new instance console output log
+# aws ec2 get-console-output --region eu-west-1 --instance-id i-ID
